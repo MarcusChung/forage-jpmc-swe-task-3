@@ -261,7 +261,7 @@ class App(object):
                     yield t, bids, asks
             else:
                 yield t, bids, asks
-
+                
     def read_10_first_lines(self):
             for _ in iter(range(10)):
                 next(self._data_1)
@@ -280,6 +280,7 @@ class App(object):
             self.__init__()
             t1, bids1, asks1 = next(self._current_book_1)
             t2, bids2, asks2 = next(self._current_book_2)
+            
         t = t1 if t1 > t2 else t2
         print ('Query received @ t%s' % t)
         return [{
